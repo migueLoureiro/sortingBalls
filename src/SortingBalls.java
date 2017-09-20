@@ -14,7 +14,8 @@ public class SortingBalls {
         for (int i=0;i<6;i++){
             in = sc.nextInt();
             //System.out.println(in);
-            vector.add(in);
+            //vector.add(in);
+            insertInOrder(in, vector);
         }
 
         //convert and print result
@@ -28,8 +29,8 @@ public class SortingBalls {
     public static Vector<Integer> insertInOrder(int n, Vector<Integer> vector){
         // parse vector, when found a bigger number, add before that one.
         for (int i=0;i<vector.size();i++){
-            if (n>vector.get(i)){
-                vector.add(n,i);
+            if (n<vector.get(i)){
+                vector.add(i,n);
                 return vector;
             }
         }
