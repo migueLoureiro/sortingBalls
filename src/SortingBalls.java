@@ -23,6 +23,18 @@ public class SortingBalls {
             System.out.print(n[i]+" ");
         }
         System.out.println();
+    }
 
+    public static Vector<Integer> insertInOrder(int n, Vector<Integer> vector){
+        // parse vector, when found a bigger number, add before that one.
+        for (int i=0;i<vector.size();i++){
+            if (n>vector.get(i)){
+                vector.add(n,i);
+                return vector;
+            }
+        }
+        //the biggest, added at end
+        vector.add(n);
+        return vector;
     }
 }
